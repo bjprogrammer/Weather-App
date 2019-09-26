@@ -1,0 +1,69 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "b9036daa67e483894d6998e375f437e5",
+    "entities": [
+      {
+        "tableName": "weather",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`city` TEXT NOT NULL, `Temp` TEXT, `Min` TEXT, `Max` TEXT, `Description` TEXT, `Image` TEXT, `forecast` TEXT, PRIMARY KEY(`city`))",
+        "fields": [
+          {
+            "fieldPath": "city",
+            "columnName": "city",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currentTemp",
+            "columnName": "Temp",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "minTemp",
+            "columnName": "Min",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "maxTemp",
+            "columnName": "Max",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "weatherType",
+            "columnName": "Description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "weatherIcon",
+            "columnName": "Image",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "forecast",
+            "columnName": "forecast",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "city"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"b9036daa67e483894d6998e375f437e5\")"
+    ]
+  }
+}
